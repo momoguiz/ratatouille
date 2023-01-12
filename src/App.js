@@ -1,52 +1,50 @@
-import './App.css'
-import './Css/NavBar.css';
-import { useEffect, useState } from 'react'
-import NavBar from './component/NavBar'
-import RecipeDetails from './component/RecipeDetails';
-import RecipeCard from './component/RecipeCard'
-import { Routes, Route } from 'react-router-dom';
-import RecipesCategory from './component/RecipesCategory';
-import RecipesCountry from './component/RecipesCountry';
-import RecipesIdeas from './component/RecipesIdeas';
+import "./App.css";
+import "./Css/NavBar.css";
+import React from "react";
+import { useEffect, useState } from "react";
+// import { Routes, Route, Link } from "react-router-dom";
+// // import { Link } from "react-router-dom";
+// import NavBar from "./component/NavBar";
+// import RecipeDetails from "./component/RecipeDetails";
+// import RecipeCard from "./component/RecipeCard";
+import ListCategories from "./component/ListCategories";
+// import RecipesCountry from "./component/RecipesCountry";
+// import RecipesIdeas from "./component/RecipesIdeas";
 
+const App = () => {
+  // const [recipes, setRecipes] = useState([]);
+  const [categories, setCategories] = useState([]);
 
-const App =()=> {
-  const [categories, setCategories]=useState([])
-  const [recipes, setRecipes]=useState([])
-
-  useEffect(()=>{
+  useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
-    .then(res => res.json())
-    .then(data =>setCategories(data.categories))
-  },[])
+      .then((res) => res.json())
+      .then((data) => setCategories(data.categories));
+  }, []);
 
+  // const changeHandler = (recipeName) => {
+  //   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setRecipes(data.meals));
+  // };
 
-  const changeHandler=(recipeName)=>{
-       fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`)
-      .then(res =>res.json())
-      .then(data=>setRecipes(data.meals))
-  }
-
-   
   return (
     <div className="App">
+      <div className="homePage">
+        {categories &&
+          categories.map((category) => {
+            return <ListCategories {...category} />;
+          })}
+      </div>
+      {/* quand click affiche les categorie a mettre dans des cards avec nom et image
+      et chaque card redirige vers toutes les recettes de la categorie precise
+      1 afficher les info
+      2 créer la route
+      3 integrer card de mui
+      4 styliser  */}
 
-    <NavBar  changeHandler={changeHandler}/>
-    {recipes && recipes.map(recipe => { 
-      return (
-      <RecipeCard recipe={recipe}/>
-      ) }) }
       {/* {categories.map(categorie =><h1 key={categorie.idCategory}>{categorie.strCategory}</h1>)} */}
-     <Routes>
-      <Route path='/:id' element={<RecipeDetails recipes={recipes}/>}/>
-      {/* <Route path='/RecipesCategory'   element={<RecipesCategory />}/>
-      <Route path='/RecipesIdeas'   element={<RecipesIdeas />}/>
-      <Route path='/:idArea'   element={<RecipesCountry recipes={recipes} />}/> */}
-      
-      
-     </Routes>
-     </div>
+    </div>
   );
-}
+};
 
 export default App;

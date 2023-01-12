@@ -1,0 +1,19 @@
+.homePage{
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* width:200px; */
+    border: 1px solid black;
+    width: 80%;
+    margin: auto;
+}
+
+.listCategory {
+    /* flex-wrap: wrap; */
+     width:300px;
+     border: 1px solid red;
+}
+.listCategory img{
+    display: flex;
+    
+}
