@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "../Css/recipesCategory.css";
 
 const RecipesCategory = () => {
   const [categories, setCategories] = useState([]);
@@ -15,13 +16,13 @@ const RecipesCategory = () => {
   }, [category]);
 
   return (
-    <div>
+    <div className="pageCategories">
       <div className="listMealsContainer">
         {categories &&
           categories.map((cat) => {
             return (
               <div className="listMeals">
-                <Link to={`/recipes/${cat.idMeal}`}>
+                <Link className="linkText" to={`/recipes/${cat.idMeal}`}>
                   <h2>{cat.strMeal}</h2>
                   {/* <p>{cat.idMeal}</p> */}
                   {/* Link qui renvoie sur la route recipes/ avec l'id en paramètre */}

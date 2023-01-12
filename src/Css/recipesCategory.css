@@ -1,14 +1,32 @@
-.listMealsContainer{
+.pageCategories{
+    background-color: black;
+}
+.listMealsContainer {
     display:flex;
     align-items: center;
-    flex-wrap: wrap;
-    /* width:200px; */
-    border: 1px solid black;
-    width: 80%;
-    margin: auto;
-}
-.listMeals{
+    flex-direction: column;
+    /* border: 1px solid black; */
+    /* width: 80%; */
+    margin: 60px ;
     width:300px;
-     border: 1px solid red;
+     border: 5px solid rgb(210, 138, 138);
+     border-radius:50px ;
+     margin: 30px;
+     text-align: center;
+}
+.listMeals:hover{
+    background-color: rgb(210, 138, 138);
+    border:black;
+    /* color:white */
+}
+.linkText{
+    color: wheat;
+}
+.linkText:hover{
+    color: black;
+}
+.listMeals img{
+    width:300px;
+     /* border: 1px solid red; */
    
 }

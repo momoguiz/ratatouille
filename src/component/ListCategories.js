@@ -8,7 +8,10 @@ const ListCategories = (props) => {
 
   return (
     <div className="listCategory">
-      <Link to={`/category/${props.strCategory.toLowerCase()}`}>
+      <Link
+        className="linkText"
+        to={`/category/${props.strCategory.toLowerCase()}`}
+      >
         <h1>{props.strCategory} </h1>
         <img
           src={props.strCategoryThumb}
