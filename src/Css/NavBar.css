@@ -1,0 +1,24 @@
+.navBar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-evenly;
+    width: 100%;
+    min-height: 1rem;
+    background-color: black;
+    color:#FFF;
+    padding: 1rem;
+
+}
+input {
+    align-items: center;
+    
+}
+.navBar_links {
+    display: flex;
+}
+.navBar_link {
+    padding: 0 0.3em;
+    color: inherit;
+
+}
