@@ -1,0 +1,14 @@
+.listMealsContainer{
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* width:200px; */
+    border: 1px solid black;
+    width: 80%;
+    margin: auto;
+}
+.listMeals{
+    width:300px;
+     border: 1px solid red;
+   
+}

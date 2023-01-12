@@ -5,9 +5,7 @@ import axios from "axios";
 const RecipesCategory = () => {
   const [categories, setCategories] = useState([]);
   const { category } = useParams();
-  // console.log(category);
 
-  //   const category = useParams();
   useEffect(() => {
     axios
       .get(
@@ -18,19 +16,21 @@ const RecipesCategory = () => {
 
   return (
     <div>
-      {categories &&
-        categories.map((cat) => {
-          return (
-            <>
-              <Link to={`/recipes/${cat.idMeal}`}>
-                <h2>{cat.strMeal}</h2>
-                {/* <p>{cat.idMeal}</p> */}
-                {/* Link qui renvoie sur la route recipes/ avec l'id en paramètre */}
-                <img src={cat.strMealThumb} alt={cat.strMeal} />
-              </Link>
-            </>
-          );
-        })}
+      <div className="listMealsContainer">
+        {categories &&
+          categories.map((cat) => {
+            return (
+              <div className="listMeals">
+                <Link to={`/recipes/${cat.idMeal}`}>
+                  <h2>{cat.strMeal}</h2>
+                  {/* <p>{cat.idMeal}</p> */}
+                  {/* Link qui renvoie sur la route recipes/ avec l'id en paramètre */}
+                  <img src={cat.strMealThumb} alt={cat.strMeal} />
+                </Link>
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 };

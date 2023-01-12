@@ -1,9 +1,9 @@
-import { useParams, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+// import { useState } from "react";
 import "../Css/listCategories.css";
 
 const ListCategories = (props) => {
-  const [categories, setCategories] = useState([]);
+  // const [categories, setCategories] = useState([]);
   console.log(props);
 
   return (
