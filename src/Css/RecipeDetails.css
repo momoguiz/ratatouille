@@ -1,8 +1,42 @@
 .recipe {
     display:flex;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     border: 1px solid black;
     width: 80%;
     margin: auto;
+    background-color: black;
+}
+.top{
+    padding-top: 60px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.recipe img{
+    margin-top: 20px;
+    width: 300px;
+    border: 5px solid rgb(210, 138, 138);
+    border-radius: 30px;
+}
+
+.ingrContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-bottom: 40px;
+}
+.vignet{
+    display: flex;
+    /* border: 1px solid violet; */
+
+    border-radius: 30px;
+    font-size: 0.7rem;
+}
+p{
+    color: wheat;
+    margin: 30 40px;
 }

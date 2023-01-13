@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "../Css/RecipeDetails.css";
 
 const RecipeDetails = () => {
   const [recipeDetail, setRecipeDetail] = useState([]);
@@ -20,20 +21,46 @@ const RecipeDetails = () => {
     <div className="recipe">
       {theRecipe && (
         <>
-          <img src={theRecipe.strMealThumb} alt={theRecipe.strMeal} />
-          <h1>{theRecipe.strMeal}</h1>
-          <h2> {theRecipe.strIngredient1 && theRecipe.strIngredient1}</h2>
-          <h2> {theRecipe.strIngredient2}</h2>
-          <h2> {theRecipe.strIngredient3}</h2>
-          <h2> {theRecipe.strIngredient4}</h2>
-          <h2> {theRecipe.strIngredient5}</h2>
+          <div className="top">
+            <h1>{theRecipe.strMeal}</h1>
+            <img src={theRecipe.strMealThumb} alt={theRecipe.strMeal} />
+          </div>
 
-          <h2> {theRecipe.strMeasure1}</h2>
-          <h2> {theRecipe.strMeasure2}</h2>
-          <h2> {theRecipe.strMeasure3}</h2>
-          <h2> {theRecipe.strMeasure4}</h2>
-          <h2> {theRecipe.strMeasure5}</h2>
-          <h2> {theRecipe.strMeasure6}</h2>
+          <div className="ingrContainer">
+            <div className="vignet">
+              <h2>
+                {" "}
+                {theRecipe.strMeasure1}{" "}
+                {theRecipe.strIngredient1 && theRecipe.strIngredient1}
+              </h2>
+            </div>
+            <div className="vignet">
+              <h2>
+                {" "}
+                {theRecipe.strMeasure2} {theRecipe.strIngredient2}
+              </h2>
+            </div>
+            <div className="vignet">
+              <h2>
+                {" "}
+                {theRecipe.strMeasure3} {theRecipe.strIngredient3}
+              </h2>
+            </div>
+            <div className="vignet">
+              <h2>
+                {" "}
+                {theRecipe.strMeasure4} {theRecipe.strIngredient4}
+              </h2>
+            </div>
+            <div className="vignet">
+              <h2>
+                {" "}
+                {theRecipe.strMeasure5} {theRecipe.strIngredient5}
+              </h2>
+            </div>
+          </div>
+          <p> {theRecipe.strInstructions}</p>
+          {/* <h2> {theRecipe.strMeasure6}</h2> */}
         </>
       )}
 
