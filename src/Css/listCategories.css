@@ -9,7 +9,10 @@
     /* margin-top: 40px; */
     background-color: black
 }
-
+h1{
+    color: wheat;
+    display: inline-block;
+}
 .listCategory {
     /* flex-wrap: wrap; */
      width:300px;
@@ -31,5 +34,5 @@
 }
 .listCategory img{
     display: flex;
-    
+    width: 150px;
 }

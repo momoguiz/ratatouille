@@ -9,9 +9,13 @@ body {
   margin:  0;
   font-family: 'Poppins', sans-serif;
 }
-img{
-  width: 150px;
+.title{
+  padding:60px 0;
+  background-color: black;
 }
+/* img{
+  width: 150px;
+} */
 ul {
   list-style: none;
   padding: 0;

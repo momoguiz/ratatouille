@@ -18,15 +18,18 @@ const RecipesCategory = () => {
   return (
     <div className="pageCategories">
       <div className="listMealsContainer">
+        {console.log(categories)}
         {categories &&
           categories.map((cat) => {
             return (
               <div className="listMeals">
                 <Link className="linkText" to={`/recipes/${cat.idMeal}`}>
-                  <h2>{cat.strMeal}</h2>
-                  {/* <p>{cat.idMeal}</p> */}
-                  {/* Link qui renvoie sur la route recipes/ avec l'id en paramètre */}
-                  <img src={cat.strMealThumb} alt={cat.strMeal} />
+                  <div className="Meal">
+                    <h2>{cat.strMeal}</h2>
+                    {/* <p>{cat.idMeal}</p> */}
+                    {/* Link qui renvoie sur la route recipes/ avec l'id en paramètre */}
+                    <img src={cat.strMealThumb} alt={cat.strMeal} />
+                  </div>
                 </Link>
               </div>
             );

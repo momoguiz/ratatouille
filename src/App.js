@@ -29,6 +29,9 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className="title">
+        <h1>Envie de ...</h1>
+      </div>
       <div className="homePage">
         {categories &&
           categories.map((category) => {
